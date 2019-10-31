@@ -13,7 +13,7 @@ def get_user_choice():
 	print("\n\n[1] Recommend me a new game.\n")
 	print("[2] See the current list of games.\n")
 	print("[q] Quit.")
-	input("\n\nWhat would you like to do? ")
+	return input("\n\nWhat would you like to do? ")
 
 def show_games():
 	print("\nHere are the games I've been suggested so far.")
@@ -30,7 +30,7 @@ def get_new_game():
 
 def load_games():
 	try:
-		file_object = open('games.pydata','wb')
+		file_object = open('games.pydata','rb')
 		games = pickle.load(file_object)
 		file_object.close()
 		return games
